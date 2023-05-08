@@ -1,13 +1,14 @@
-import logo from 'assets/logo.svg';
-import './Home.css';
 
-function Home() {
+import logo from 'assets/logo.svg';
+import './Admin.css';
+
+function Admin() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          I'm Admin.
         </p>
         <a
           className="App-link"
@@ -22,4 +23,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Admin;

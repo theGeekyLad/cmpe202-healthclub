@@ -1,13 +1,13 @@
 import logo from 'assets/logo.svg';
-import './Home.css';
+import './Profile.css';
 
-function Home() {
+function Profile() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          I'm Profile.
         </p>
         <a
           className="App-link"
@@ -22,4 +22,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Profile;
