@@ -17,7 +17,7 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { BrowserRouter, Link, Router, Navigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
-import './Appbar.scss';
+import './Appbar.scss'; 
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
