@@ -12,9 +12,12 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import FitnessCenter from '@mui/icons-material/FitnessCenter';
+import Breadcrumbs from '@mui/material/Breadcrumbs';
 
 import { BrowserRouter, Link, Router, Navigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+
+import './Appbar.scss';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -166,7 +169,22 @@ function Appbar(props) {
           </Toolbar>
         </Container>
       </AppBar>
-      <Outlet />
+      <div class="padded">
+        <Breadcrumbs class="breadcrumbs" aria-label="breadcrumb">
+          <Link underline="hover" color="inherit" href="/">
+            MUI
+          </Link>
+          <Link
+            underline="hover"
+            color="inherit"
+            href="/material-ui/getting-started/installation/"
+          >
+            Core
+          </Link>
+          <Typography color="text.primary">Breadcrumbs</Typography>
+        </Breadcrumbs>
+        <Outlet />
+      </div>
     </div>
   );
 }
