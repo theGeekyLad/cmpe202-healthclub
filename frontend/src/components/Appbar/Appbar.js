@@ -17,11 +17,15 @@ import Breadcrumbs from '@mui/material/Breadcrumbs';
 import { BrowserRouter, Link, Router, Navigate } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 
-import './Appbar.scss'; 
+import AppContext from 'context';
+
+import './Appbar.scss';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Appbar(props) {
+  const { context, setContext } = React.useContext(AppContext);
+
   const pages = props.pages ?? [{ title: 'Home', link: '/' }];
 
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -181,7 +185,7 @@ function Appbar(props) {
           >
             Core
           </Link>
-          <Typography color="text.primary">Breadcrumbs</Typography>
+          <Typography color="text.primary">{context.vegetable}</Typography>
         </Breadcrumbs>
         <Outlet />
       </div>
