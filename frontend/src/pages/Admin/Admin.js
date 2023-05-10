@@ -1,8 +1,20 @@
+import { useContext, useEffect } from 'react'; 
+
+import AppContext from 'context';
 
 import logo from 'assets/logo.svg';
 import './Admin.css';
 
 function Admin() {
+  const { context, setContext } = useContext(AppContext);
+
+  useEffect(() => {
+    setContext({
+      ...context,
+      path: 'Admin'
+    });
+  });
+
   return (
     <div className="App">
       <header className="App-header">

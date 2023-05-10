@@ -175,7 +175,7 @@ function Appbar(props) {
       </AppBar>
       <div class="padded">
         <Breadcrumbs class="breadcrumbs" aria-label="breadcrumb">
-          <Link underline="hover" color="inherit" href="/">
+          {/* <Link underline="hover" color="inherit" href="/">
             MUI
           </Link>
           <Link
@@ -184,8 +184,8 @@ function Appbar(props) {
             href="/material-ui/getting-started/installation/"
           >
             Core
-          </Link>
-          <Typography color="text.primary">{context.vegetable}</Typography>
+          </Link> */}
+          <Typography color="text.primary">{context.path}</Typography>
         </Breadcrumbs>
         <Outlet />
       </div>

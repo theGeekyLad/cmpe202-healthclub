@@ -6,8 +6,7 @@ import AppContext from 'context';
 
 function State() {
   const [context, setContext] = React.useState({
-    fruit: 'apple',
-    vegetable: 'bhindi'
+    path: ''
   });
   const value = { context, setContext };
 
