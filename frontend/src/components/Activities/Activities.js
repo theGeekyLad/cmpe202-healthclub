@@ -30,6 +30,23 @@ function Activities() {
 
   // --------------------------------
 
+  // --------------------------------
+
+  const dateRangeButtonGroup = [
+    {
+      title: 'last week',
+      handleClick() { }
+    },
+    {
+      title: 'last month',
+      handleClick() { }
+    },
+    {
+      title: 'last 90 days',
+      handleClick() { }
+    }
+  ]
+
   const handleToggle = (i) => {
     checked[i] = !checked[i];
     setChecked(checked);
@@ -64,7 +81,12 @@ function Activities() {
     <div className="component-activities">
 
       {/* header */}
-      <ProfileHeader title="Activities" actionButton="Activity" bottomSheetTitle="Add Activity" bottomSheetOnSave={handleSave}>
+      <ProfileHeader
+        title="Activities"
+        actionButton="Activity"
+        bottomSheetTitle="Add Activity"
+        bottomSheetOnSave={handleSave}
+        buttonGroup={dateRangeButtonGroup}>
 
         {/* bottom sheet content */}
         <FormGroup>
