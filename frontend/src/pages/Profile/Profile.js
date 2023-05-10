@@ -4,7 +4,6 @@ import Button from '@mui/material/Button';
 
 import AppContext from 'context';
 
-import logo from 'assets/logo.svg';
 import './Profile.css';
 import { Grid, Container } from '@mui/material';
 import WeeklySchedule from 'components/WeeklySchedule/WeeklySchedule';
@@ -58,12 +57,12 @@ function Profile() {
         </Grid>
 
         {/* weekly schedule */}
-        <Grid container spacing={2} sx={{ mt: '2rem' }}>
+        <Grid container spacing={2} sx={{ mt: '3rem' }}>
           <WeeklySchedule />
         </Grid>
 
         {/* activities */}
-        <Grid container spacing={2} sx={{ mt: '2rem' }}>
+        <Grid container spacing={2} sx={{ mt: '3rem' }}>
           <Activities />
         </Grid>
       </Container>

@@ -4,67 +4,69 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Accordion, AccordionActions, AccordionSummary, AccordionDetails } from '@mui/material';
+import { ExpandMore, Add } from '@mui/icons-material';
 
 import { Grid, Container } from '@mui/material';
 
 import './Activities.scss'
+import ProfileHeader from 'components/ProfileHeader/ProfileHeader';
 
 function Activities() {
 
   return (
     <div className="component-activities">
 
-      <Card>
-        <CardContent>
-          <Typography variant='h5'>Activities</Typography>
-          <Typography variant="body1" sx={{ pt: '1rem' }}>
+      {/* header */}
+      <ProfileHeader title="Activities" actionButton="Activity" />
 
-            {/* content */}
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <Typography>Running</Typography>
             </Grid>
-            <hr />
+            <Grid item xs={4} sx={{ textAlign: 'center' }}>
+              <Typography>1h 30m</Typography>
+            </Grid>
+            <Grid item xs={4} sx={{ textAlign: 'end' }}>
+              <Typography>05/09/2023</Typography>
+            </Grid>
+          </Grid>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography paragraph>Start time: 4:30pm</Typography>
+          <Typography paragraph>End time: 6pm</Typography>
+        </AccordionDetails>
+      </Accordion>
 
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
+      <Accordion>
+        <AccordionSummary
+          expandIcon={<ExpandMore />}
+          aria-controls="panel1a-content"
+          id="panel1a-header"
+        >
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <Typography>Running</Typography>
             </Grid>
-            <hr />
-
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
+            <Grid item xs={4} sx={{ textAlign: 'center' }}>
+              <Typography>1h 30m</Typography>
             </Grid>
-            <hr />
-
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
+            <Grid item xs={4} sx={{ textAlign: 'end' }}>
+              <Typography>05/09/2023</Typography>
             </Grid>
-            <hr />
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button size="small">Add Class</Button>
-        </CardActions>
-      </Card>
+          </Grid>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography paragraph>Start time: 4:30pm</Typography>
+          <Typography paragraph>End time: 6pm</Typography>
+        </AccordionDetails>
+      </Accordion>
 
     </div>
   );

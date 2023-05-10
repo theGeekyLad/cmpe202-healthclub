@@ -17,3 +17,8 @@ code {
 .padded {
   padding: 1rem;
 }
+
+.my-list {
+  width: 100%;
+  background-color: white,
+}

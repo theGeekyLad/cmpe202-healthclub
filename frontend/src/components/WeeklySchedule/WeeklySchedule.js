@@ -4,66 +4,42 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { List, ListItem, ListItemText, Divider } from '@mui/material';
+import { style } from '@mui/material';
+import { Add } from '@mui/icons-material';
 
 import { Grid, Container } from '@mui/material';
 
 import './WeeklySchedule.scss'
+import ProfileHeader from 'components/ProfileHeader/ProfileHeader';
 
 function WeeklySchedule() {
 
   return (
     <div className="component-weekly-schedule">
 
+      {/* header */}
+      <ProfileHeader title="Weekly Schedule" actionButton="Class" />
+
       <Card>
         <CardContent>
-          <Typography variant='h5'>Weekly Schedule</Typography>
-          <Typography variant="body1" sx={{ pt: '1rem' }}>
-
-            {/* content */}
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
-            </Grid>
-            <hr />
-
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
-            </Grid>
-            <hr />
-
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
-            </Grid>
-            <hr />
-
-            <Grid container spacing={2}>
-              <Grid item xs={6}>
-                <Typography>Yoga</Typography>
-              </Grid>
-              <Grid item xs={6} sx={{ textAlign: 'end' }}>
-                <Typography>4pm to 5pm</Typography>
-              </Grid>
-            </Grid>
-            <hr />
-          </Typography>
+          <List className='my-list' component="nav" aria-label="mailbox folders">
+            <ListItem>
+              <ListItemText primary="Yoga" secondary="4pm to 5pm" />
+            </ListItem>
+            <Divider />
+            <ListItem divider>
+              <ListItemText primary="Yoga" secondary="4pm to 5pm" />
+            </ListItem>
+            <ListItem>
+              <ListItemText primary="Yoga" secondary="4pm to 5pm" />
+            </ListItem>
+            <Divider light />
+            <ListItem>
+              <ListItemText primary="Yoga" secondary="4pm to 5pm" />
+            </ListItem>
+          </List>
         </CardContent>
-        <CardActions>
-          <Button size="small">Add Class</Button>
-        </CardActions>
       </Card>
 
     </div>
