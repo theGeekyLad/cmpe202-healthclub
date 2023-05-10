@@ -185,7 +185,9 @@ function Appbar(props) {
           >
             Core
           </Link> */}
-          <Typography color="text.primary">{context.path}</Typography>
+          {context.path.map(p =>
+            <Typography color="text.primary">{p}</Typography>
+          )}
         </Breadcrumbs>
         <Outlet />
       </div>

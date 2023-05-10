@@ -11,9 +11,9 @@ function Admin() {
   useEffect(() => {
     setContext({
       ...context,
-      path: 'Admin'
+      path: ['Admin']
     });
-  });
+  }, []);
 
   return (
     <div className="App">

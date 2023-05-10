@@ -11,9 +11,9 @@ function Home() {
   useEffect(() => {
     setContext({
       ...context,
-      path: 'Home'
+      path: ['Home']
     });
-  });
+  }, []);
 
   return (
     <div className="App">

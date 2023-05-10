@@ -6,7 +6,7 @@ import AppContext from 'context';
 
 function State() {
   const [context, setContext] = React.useState({
-    path: ''
+    path: []
   });
   const value = { context, setContext };
 

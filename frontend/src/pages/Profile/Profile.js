@@ -15,9 +15,9 @@ function Profile() {
   useEffect(() => {
     setContext({
       ...context,
-      path: 'Profile'
+      path: ['Profile']
     });
-  });
+  }, []);
 
   return (
     <div className="component-profile">
