@@ -21,5 +21,12 @@ export default {
   completeLoginOrReg(name, email) {
     localStorage.setItem('name', name);
     localStorage.setItem('email', email);
+  },
+
+  getToast(message, severity) {
+    return {
+      severity,
+      message,
+    };
   }
 }

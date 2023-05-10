@@ -20,6 +20,7 @@ import { Outlet } from "react-router-dom";
 import AppContext from 'context';
 
 import './Appbar.scss';
+import Toast from 'components/Toast/Toast';
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -48,6 +49,7 @@ function Appbar(props) {
 
   return (
     <div class="component-appbar">
+      <Toast />
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
@@ -125,7 +127,7 @@ function Appbar(props) {
                 textDecoration: 'none',
               }}
             >
-              LOGO
+              CARDBCRUSHER
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (

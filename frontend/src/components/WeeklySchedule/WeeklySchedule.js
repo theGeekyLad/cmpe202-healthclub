@@ -19,7 +19,7 @@ function WeeklySchedule() {
 
   const handleToggle = (i) => {
     checked[i] = !checked[i];
-    setChecked(checked);
+    setChecked(checked.slice(0, checked.length));
   };
 
   return (
