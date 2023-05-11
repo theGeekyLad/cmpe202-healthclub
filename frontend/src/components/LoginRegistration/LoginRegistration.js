@@ -20,7 +20,7 @@ import AppContext from 'context';
 
 import { Grid, Container, FormGroup, FormHelperText } from '@mui/material';
 
-import services from 'services';
+import Service from 'services';
 import util from 'util';
 
 function LoginRegistration(props) {
@@ -52,6 +52,8 @@ function LoginRegistration(props) {
 
   // --------------------------------------
 
+  const services = new Service(context, setContext);
+
   const handleToggle = (e) => {
     isRegistration = e.target.value === 'register' ? true : false;
     setIsRegistration(isRegistration);
@@ -67,62 +69,22 @@ function LoginRegistration(props) {
     return (!isRegistration || name) && email && password;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (validateInputs()) {
 
       if (isRegistration) {
-        //   const res = await services.register(name, email, password);
-        //   if (res == null)
-        //     setContext({
-        //       ...context,
-        //       toast: {
-        //         message: getLoginOrRegText() + ' failed!',
-        //         severity: 'error'
-        //       }
-        //     });
-        //   else {
-        //     util.completeLoginOrReg(name, email);
-        //     setContext({
-        //       ...context,
-        //       toast: {
-        //         message: getLoginOrRegText() + ' success!',
-        //         severity: 'success'
-        //       }
-        //     });
-        //     navigate("/home");
-        //   }
-        // } else {
-        //   const res = await services.login(email, password);
-        //   if (res == null)
-        //     setContext({
-        //       ...context,
-        //       toast: {
-        //         message: getLoginOrRegText() + ' failed!',
-        //         severity: 'error'
-        //       }
-        //     });
-        //   else {
-        //     util.completeLoginOrReg(res.data.text, email);
-        //     setContext({
-        //       ...context,
-        //       toast: {
-        //         message: getLoginOrRegText() + ' success!',
-        //         severity: 'success'
-        //       }
-        //     });
-        //     navigate("/home");
-        //   }
+        services.postRegister(
+          'San Jose',
+          name.split()[0],
+          name.split()[1],
+          email,
+          password,
+          () => {
+            util.completeLoginOrReg('John Doe', email);
+            setRefresh(!refresh);  // reloads this component
+          }
+        )
       }
-
-      util.completeLoginOrReg('John Doe', email);
-
-      setContext({
-        ...context,
-        toast: util.getToast("You've been logged in!", 'success')
-      });
-
-      // reloads this component
-      setRefresh(!refresh);
     }
   }
 
